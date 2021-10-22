@@ -16,5 +16,12 @@ if [ -e "/dev/sda" ]; then
   echo "copy to /dev/sda"
   dd if=u-boot-sunxi-with-spl.bin of=/dev/sda bs=8k seek=1
 fi
+
+if [ -e "/dev/mmcblk0" ]; then
+  echo "copy to /dev/mmcblk0"
+  dd if=u-boot-sunxi-with-spl.bin of=/dev/mmcblk0 bs=8k seek=1
+fi
+
+
 sync
 

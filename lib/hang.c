@@ -11,7 +11,7 @@
 #include <bootstage.h>
 #include <hang.h>
 #include <os.h>
-
+extern void reset_cpu(void);
 /**
  * hang - stop processing by staying in an endless loop
  *
@@ -28,6 +28,7 @@ void hang(void)
 	puts("### ERROR ### Please RESET the board ###\n");
 #endif
 	bootstage_error(BOOTSTAGE_ID_NEED_RESET);
+	reset_cpu();
 	if (IS_ENABLED(CONFIG_SANDBOX))
 		os_exit(1);
 	for (;;)

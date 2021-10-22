@@ -5,6 +5,7 @@ Slightly modified from mainline:
 - enable automatic reset if the uboot shell is not used
 - Added binaries for bl31.bin
 - no SCP support (because system won't sleep anyway)
+- hang will now reset the cpu (this is an embedded system, no one is here to manage hang)
 
 Added a custom MakeAndDeploy.sh, to help compilation and debug (beware in /dev/sda is your main disk)
 
